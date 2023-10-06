@@ -26,7 +26,7 @@ NEXTAUTH_URL=http://localhost:3000
 ```bash
 npm run dev
 # or
-yarn dev
+pnpm run dev
 ```
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
