@@ -16,9 +16,11 @@ export default function Home() {
   const onSubmit = (data) => console.log(data);
 
   if (session) {
+    console.log(session);
     return (
       <>
         Signed in as {session.user.email} <br />
+        name of user is {session.user.name} <br />
         <button onClick={() => signOut()}>Sign out</button>
       </>
     );
@@ -26,7 +28,17 @@ export default function Home() {
     return (
       <>
         Not signed in <br />
-        <button onClick={() => signIn()}>Sign in</button>
+        <button onClick={() => signIn("google")}>Sign in</button>
+        {/* button for credential login next auth */}
+        <button
+          onClick={() =>
+            signIn("credentials", {
+              email: "something@gmail.com",
+              password: "some password",
+            })
+          }>
+          Sign in with credential
+        </button>
       </>
     );
   }
